@@ -1,15 +1,16 @@
 class Solution {
 public:
     bool checkIfExist(vector<int>& arr) {
-        unordered_map<int,int> mp;
+        // unordered_map<int,int> mp;
+        unordered_set<int> s;
 
         for (auto n: arr){
-            if (mp.find(n) != mp.end()){
+            if (s.find(n) != s.end()){
                 return true;
             }
 
-            mp[n*2]++;
-            if (n % 2 == 0) mp[n/2]++;
+            s.insert(n*2);
+            if (n % 2 == 0) s.insert(n/2);
         }
 
         return false;
