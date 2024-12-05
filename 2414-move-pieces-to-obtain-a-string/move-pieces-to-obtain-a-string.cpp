@@ -46,3 +46,9 @@ public:
         
     }
 };
+
+//question theory : 
+// https://www.youtube.com/watch?v=eQS_r3KwCx0
+
+//simpler code theory
+// https://www.youtube.com/watch?v=jsQciMXyz_A&pp=ygUebW92ZSBwaWVjZXMgdG8gb2J0YWluIGEgc3RyaW5n
