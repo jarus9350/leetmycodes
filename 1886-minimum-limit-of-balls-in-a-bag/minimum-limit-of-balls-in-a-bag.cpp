@@ -30,6 +30,7 @@ public:
         while (l <= h){
             int mid =  l + (h - l)/2;
             if (possible(nums,bins,maxOperations,mid)){
+                
                 h = mid-1;
             } else {
                 l = mid+1;
