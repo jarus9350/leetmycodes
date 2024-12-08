@@ -33,7 +33,7 @@ public:
                 possibleAns = max(possibleAns,prevMax + value);
             }
 
-            cout<<prevMax<<" "<<possibleAns<<endl;
+            // cout<<prevMax<<" "<<possibleAns<<endl;
 
         }
 
