@@ -19,10 +19,10 @@ public:
             }
         }
 
-        for (auto n: consecutiveOrder){
-            cout<<n<<" ";
-        }
-        cout<<endl;
+        // for (auto n: consecutiveOrder){
+        //     cout<<n<<" ";
+        // }
+        // cout<<endl;
 
         vector<bool> ans;
         for (auto q: queries){
