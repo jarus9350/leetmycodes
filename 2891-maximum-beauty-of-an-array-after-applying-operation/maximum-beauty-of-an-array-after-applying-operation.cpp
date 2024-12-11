@@ -12,7 +12,7 @@ public:
             
             if (nums[j] - nums[i] <= 2*k){
                 ans = max(ans, j - i + 1);
-                cout<<i<<" "<<j<<" "<<ans<<endl;
+                // cout<<i<<" "<<j<<" "<<ans<<endl;
             } else {
                 while ( j >= i && nums[j] - nums[i] > 2*k){
                     i++;
