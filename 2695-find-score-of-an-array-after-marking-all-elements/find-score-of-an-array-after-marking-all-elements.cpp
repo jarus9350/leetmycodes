@@ -11,7 +11,7 @@ public:
 
     long long findScore(vector<int>& nums) {
         int s = nums.size();
-        vector<pair<int,int>> ni;
+        // vector<pair<int,int>> ni;
         set<int> indices;
         priority_queue<pair<int,int>, vector<pair<int,int>>, compare> pq;
         for (int i = 0 ; i <  nums.size() ; i++){
