@@ -19,9 +19,9 @@ public:
 
         sort(yearsPolarity.begin(),yearsPolarity.end(), Compare());
 
-        for (auto yp: yearsPolarity){
-            cout<<yp[0]<<" "<<yp[1]<<endl;
-        }
+        // for (auto yp: yearsPolarity){
+        //     cout<<yp[0]<<" "<<yp[1]<<endl;
+        // }
 
         int currentPopulation = 0;
         int maxPopYear = INT_MAX;
@@ -42,7 +42,7 @@ public:
             }   
         }
 
-        cout<<"mp "<<maxPopulation<<endl;
+        // cout<<"mp "<<maxPopulation<<endl;
 
         return maxPopYear;
         
