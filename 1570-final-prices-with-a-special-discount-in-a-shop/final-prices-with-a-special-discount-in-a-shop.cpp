@@ -4,7 +4,8 @@ public:
         int n = prices.size();
         vector<int> ans;
         
-        for (int i = 0 ; i < n ; i++){
+        int i = 0 ;
+        for (; i < n ; i++){
             int first = prices[i];
 
             bool found = false;
