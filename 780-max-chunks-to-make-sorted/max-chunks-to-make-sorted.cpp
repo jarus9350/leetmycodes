@@ -30,10 +30,10 @@ public:
             
 
             if (j - i + 1 == count){
-                cout<<"entered"<<endl;
+                // cout<<"entered"<<endl;
                 ans++;
                 count = 0;
-                mp.clear();
+                // mp.clear();
                 
                 // j++;
                 i = j + 1;
