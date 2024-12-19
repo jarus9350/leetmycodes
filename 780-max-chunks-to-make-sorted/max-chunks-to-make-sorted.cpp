@@ -5,10 +5,10 @@ public:
         newArr = arr;
         sort(newArr.begin(),newArr.end());
 
-        for (auto a: newArr){
-            cout<<a<<" ";
-        }
-        cout<<endl;
+        // for (auto a: newArr){
+        //     cout<<a<<" ";
+        // }
+        // cout<<endl;
 
         int i = 0;
         int j = 0;
