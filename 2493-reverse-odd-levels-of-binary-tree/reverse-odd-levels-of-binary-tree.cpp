@@ -12,10 +12,6 @@
 class Solution {
 public:
 
-    // TreeNode* reverseOddLevels(TreeNode* root) {
-        
-    // }
-
     TreeNode* reverseOddLevels(TreeNode* root) {
         queue<pair<TreeNode*,int>> q;
 
