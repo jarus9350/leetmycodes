@@ -15,21 +15,21 @@
 
 class Solution {
 private:
-    int dfs(int curr, int parent, vector<int> adjList[],vector<int>& values,int& k,int& ans){
-        int total = 0;
+    long long dfs(int curr, int parent, vector<int> adjList[],vector<int>& values,int& k,int& ans){
+        long long total = values[curr];
 
         for (auto& child : adjList[curr]){
             if (child != parent){
                 total += dfs(child,curr,adjList,values,k,ans);
-                total %= k;
+                // total %= k;
             }
         }
 
-        total += values[curr];
-        total %= k;
+        // total += values[curr];
+        // total %= k;
         
 
-        if (total == 0){
+        if (total % k == 0){
             ans++;
         }
 
