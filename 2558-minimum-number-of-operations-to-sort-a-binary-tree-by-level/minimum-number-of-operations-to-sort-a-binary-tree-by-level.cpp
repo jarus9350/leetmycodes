@@ -15,23 +15,10 @@ public:
         int swaps = 0;
         unordered_map<int, int> mp;
 
-        for (int i = 0 ; i < levelvals.size() ; i++){
-            mp[levelvals[i]] = i;
-        }
-
+        for (int i = 0 ; i < levelvals.size() ; i++) mp[levelvals[i]] = i; 
 
         auto sortedLevelsVals = levelvals;
         sort(sortedLevelsVals.begin(),sortedLevelsVals.end());
-
-        // for (auto l: levelvals){
-        //     cout<<l<<" ";
-        // }
-        // cout<<endl;
-
-        // for (auto l: sortedLevelsVals){
-        //     cout<<l<<" ";
-        // }
-        // cout<<endl;
 
         for (int i = 0 ; i < levelvals.size() ; ){
             if (sortedLevelsVals[i] != levelvals[i]){
