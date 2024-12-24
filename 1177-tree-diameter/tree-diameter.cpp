@@ -52,7 +52,7 @@ public:
         auto [deepestLevel , fartherstNode] = bfs(0,adjList,n);
         auto [newDL, newFN] = bfs(fartherstNode,adjList,n);
 
-        cout<<newDL<<" "<<newFN<<endl;
+        // cout<<newDL<<" "<<newFN<<endl;
 
         return newDL-1;
 
