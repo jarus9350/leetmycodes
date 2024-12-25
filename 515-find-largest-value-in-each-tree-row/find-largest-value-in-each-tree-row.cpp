@@ -14,8 +14,7 @@ public:
     vector<int> largestValues(TreeNode* root) {
         if (!root) return {};
         queue<pair<TreeNode*,int>> q;
-        vector<int> ans(10000,INT_MIN);
-        vector<int> newSomething;
+        vector<int> ans;
 
         if (root) q.push({root,0});
         int levels = 0;
@@ -26,13 +25,12 @@ public:
                 auto [node, level] = q.front();
                 q.pop();
 
-                if (newSomething.size() < level + 1){
-                    newSomething.push_back(node->val);
+                if (ans.size() < level + 1){
+                    ans.push_back(node->val);
                 } else {
-                    newSomething[level] = max(newSomething[level],node->val);
+                    ans[level] = max(ans[level],node->val);
                 }
 
-                ans[level] = max(ans[level],node->val);
                 levels = level;
 
                 if (node->left) q.push({node->left, level+1});
@@ -41,14 +39,7 @@ public:
             }
         }
 
-        vector<int> newAns(levels+1);
-        for (int i = 0 ; i <= levels ; i++){
-            newAns[i] = ans[i];
-        }
-        
-        // return newAns;
-
-        return newSomething;
+        return ans;
 
 
     }
