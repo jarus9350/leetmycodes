@@ -13,7 +13,6 @@ class Solution {
 public:
     vector<int> largestValues(TreeNode* root) {
         if (!root) return {};
-        map<int,int> mp;
         queue<pair<TreeNode*,int>> q;
         vector<int> ans(10000,INT_MIN);
 
@@ -26,9 +25,8 @@ public:
                 auto [node, level] = q.front();
                 q.pop();
 
-                // mp[level] = max(mp[level],node->val);
                 ans[level] = max(ans[level],node->val);
-                levels = max(levels,level);
+                levels = level;
 
                 if (node->left) q.push({node->left, level+1});
                 if (node->right) q.push({node->right, level+1});
@@ -36,9 +34,6 @@ public:
             }
         }
 
-        // for (auto m: mp){
-        //     ans.push_back(m.second);
-        // }
         vector<int> newAns(levels+1);
         for (int i = 0 ; i <= levels ; i++){
             newAns[i] = ans[i];
