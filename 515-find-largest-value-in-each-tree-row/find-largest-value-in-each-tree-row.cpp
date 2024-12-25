@@ -15,6 +15,7 @@ public:
         if (!root) return {};
         queue<pair<TreeNode*,int>> q;
         vector<int> ans(10000,INT_MIN);
+        vector<int> newSomething;
 
         if (root) q.push({root,0});
         int levels = 0;
@@ -24,6 +25,12 @@ public:
             while (levelSize--){
                 auto [node, level] = q.front();
                 q.pop();
+
+                if (newSomething.size() < level + 1){
+                    newSomething.push_back(node->val);
+                } else {
+                    newSomething[level] = max(newSomething[level],node->val);
+                }
 
                 ans[level] = max(ans[level],node->val);
                 levels = level;
@@ -39,6 +46,10 @@ public:
             newAns[i] = ans[i];
         }
         
-        return newAns;
+        // return newAns;
+
+        return newSomething;
+
+
     }
 };
