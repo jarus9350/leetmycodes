@@ -8,7 +8,7 @@ public:
     long helper(int i,string& target,int nextIndex, vector<string>& words){
         if (i == target.size()) return 1; 
         if (nextIndex == commonWordLength) return 0;
-        //if (words[0].size() - nextIndex < target.size() - i) return 0;
+        if (words[0].size() - nextIndex < target.size() - i) return 0;
 
         if (memo[i][nextIndex] != -1) return memo[i][nextIndex];
 
