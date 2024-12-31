@@ -8,8 +8,8 @@ public:
 
         // 1 day
         int j = index;
-        int destNum = days[index] + 1;
-        while ( j < days.size() && destNum > days[j] ) {
+        int destDay = days[index] + 1;
+        while ( j < days.size() && destDay > days[j] ) {
             j++;
         }
 
@@ -17,8 +17,8 @@ public:
 
         // 1 week
         j = index;
-        destNum = days[index] + 7;
-        while ( j < days.size() && destNum > days[j] ) {
+        destDay = days[index] + 7;
+        while ( j < days.size() && destDay > days[j] ) {
             j++;
         }
 
@@ -26,8 +26,8 @@ public:
 
         // 1 month
         j = index;
-        destNum = days[index] + 30;
-        while ( j < days.size() && destNum > days[j] ) {
+        destDay = days[index] + 30;
+        while ( j < days.size() && destDay > days[j] ) {
             j++;
         }
 
@@ -42,3 +42,5 @@ public:
         return a;
     }
 };
+
+// https://www.youtube.com/watch?v=4pY1bsBpIY4
