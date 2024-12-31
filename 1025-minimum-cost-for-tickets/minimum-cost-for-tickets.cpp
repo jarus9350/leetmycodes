@@ -15,7 +15,7 @@ public:
 
             int j = index;
             int destDay = days[index] + d;
-            while ( j < days.size() && destDay > days[j] ) {
+            while ( j < days.size() && days[j] < destDay) {
                 j++;
             }
 
