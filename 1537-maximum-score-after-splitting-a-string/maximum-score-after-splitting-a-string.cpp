@@ -15,8 +15,8 @@ public:
             if (s[i] == '0') {
                 count++;
             }
-            maxScore = max(maxScore, count + (i + 1 < n ? backs[i+1] : 0));
-            cout<<maxScore<<" ";
+            maxScore = max(maxScore, count + backs[i+1]);
+            // cout<<maxScore<<" ";
         }
 
         return maxScore;
