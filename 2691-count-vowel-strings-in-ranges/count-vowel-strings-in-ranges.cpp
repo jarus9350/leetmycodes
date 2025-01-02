@@ -15,10 +15,10 @@ public:
             prefixSum[i] = count;
         }
 
-        for (auto a: prefixSum){
-            cout<<a<<" ";
-        }
-        cout<<endl;
+        // for (auto a: prefixSum){
+        //     cout<<a<<" ";
+        // }
+        // cout<<endl;
 
         vector<int> ans;
 
