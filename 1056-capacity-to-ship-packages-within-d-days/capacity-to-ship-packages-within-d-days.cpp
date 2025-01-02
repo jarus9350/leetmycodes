@@ -13,7 +13,7 @@ public:
 
         // if (sum > maxWeight) totalDays++;
 
-        cout<<totalDays<<" "<<maxWeight<<endl;
+        // cout<<totalDays<<" "<<maxWeight<<endl;
 
         return totalDays <= days;
     }
@@ -34,7 +34,7 @@ public:
             if (possible(weights,days,m)) {
                 // cout<<"possible "<<m<<endl;
                 ans = min(ans,m);
-                h = m-1;
+                h = m - 1;
             } else {
                 l = m + 1;
             }
