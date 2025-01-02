@@ -9,7 +9,7 @@ public:
         for (int i = 0 ; i < n ; i++){
             auto w = words[i];
             if (s.find(w.front()) != s.end() && s.find(w.back()) != s.end()){
-                cout<<w<<" "<<i<<endl;
+                // cout<<w<<" "<<i<<endl;
                 count++;
             }
             prefixSum[i] = count;
