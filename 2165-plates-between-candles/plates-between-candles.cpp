@@ -10,13 +10,6 @@ public:
             prefixSum.push_back(sum);
         }
 
-        // int k = 0;
-        // for (auto s: prefixSum){
-
-        //     cout<<s<<" ";
-        // }
-        // cout<<endl;
-
 
         vector<int> left(len,0);
         vector<int> right(len,0);
@@ -29,11 +22,6 @@ public:
             }
         }
 
-        // for (auto l:  left){
-        //     cout<<l<<" ";
-        // }
-        // cout<<endl;
-
         for (int i = len - 1; i >= 0 ; i--){
             if (s[i] == '|'){
                 right[i] = i;
@@ -41,13 +29,6 @@ public:
                 right[i] = (i == len - 1) ?  -1 : right[i+1];
             }
         }
-
-        //  for (auto l:  right){
-        //     cout<<l<<" ";
-        // }
-        // cout<<endl;
-
-
 
         vector<int> ans;
 
