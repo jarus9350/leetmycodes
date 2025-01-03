@@ -10,12 +10,12 @@ public:
             prefixSum.push_back(sum);
         }
 
-        int k = 0;
-        for (auto s: prefixSum){
+        // int k = 0;
+        // for (auto s: prefixSum){
 
-            cout<<s<<" ";
-        }
-        cout<<endl;
+        //     cout<<s<<" ";
+        // }
+        // cout<<endl;
 
 
         vector<int> left(len,0);
