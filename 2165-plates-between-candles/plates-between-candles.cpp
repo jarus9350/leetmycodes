@@ -29,10 +29,10 @@ public:
             }
         }
 
-        for (auto l:  left){
-            cout<<l<<" ";
-        }
-        cout<<endl;
+        // for (auto l:  left){
+        //     cout<<l<<" ";
+        // }
+        // cout<<endl;
 
         for (int i = len - 1; i >= 0 ; i--){
             if (s[i] == '|'){
