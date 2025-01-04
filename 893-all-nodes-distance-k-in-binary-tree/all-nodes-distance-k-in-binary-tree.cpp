@@ -47,14 +47,20 @@ public:
 
         vector<int> ans;
 
-        while (q.size()){
+        while (!q.empty()){
             int levelSize = q.size();
+            bool toBreak = false;
             while (levelSize--){
                 auto front = q.front();
 
                 int val = front[0];
                 int level = front[1];
                 int parent = front[2];
+
+                if ( level > k) {
+                    toBreak = true;
+                    break;
+                }
 
                 q.pop();
 
@@ -69,6 +75,8 @@ public:
                     }
                 }
             }
+
+            if (toBreak) break;
         }
 
         return ans;
