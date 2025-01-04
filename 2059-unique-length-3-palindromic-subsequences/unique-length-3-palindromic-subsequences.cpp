@@ -3,6 +3,17 @@ public:
     int countPalindromicSubsequence(string s) {
         int l = s.length();
 
+        // unordered_map<int,pair<int,int>> charfirstLast;
+
+        // for (int i = 0 ; i < l ; i++){
+        //     char c = s[i];
+        //     if (charfirstLast.find(c) == charfirstLast.end()){
+        //         charfirstLast[c] = {i,i};
+        //     } else {
+        //         charfirstLast[c] = {charfirstLast[c].first,i};
+        //     }
+        // }
+
         vector<int> first(26,-1);
         vector<int> last(26,-1);
 
@@ -20,23 +31,30 @@ public:
             }
         }
 
-        int ans = 0;
-        
-        for (int i = 0 ; i < 26 ; i++){
-            int f = first[i];
-            int l = last[i];
+        set<string> ans;
 
-            if (f == -1) continue;
+        for (int i = 1 ; i < l - 1 ; i++){
+            char c = s[i];
+            for (int j = 0 ; j < 26 ; j++){
+                char alpha = 'a' + j;
+                string inter = "";
 
-            unordered_set<char> hash;
-            for (int j = f + 1 ; j < l ; j++){
-                hash.insert(s[j]);
+                if (first[j] == -1) continue;
+
+                int f = first[j];
+                int l = last[j];
+
+                    if (f < i && l > i){
+                        inter += alpha;
+                        inter += c;
+                        inter += alpha;
+                        ans.insert(inter);
+                    }
             }
 
-            ans += hash.size();
         }
 
-        return ans;
+        return ans.size();
 
     }
 };
