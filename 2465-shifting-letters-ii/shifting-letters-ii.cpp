@@ -24,11 +24,6 @@ public:
             prefix[i] += prefix[i-1];
         }
 
-        for (auto i: prefix){
-            cout<<i<<" ";
-        }
-        cout<<endl;
-
         for (int i = 0 ; i < l ; i++){
             char ch = s[i];
             int increment = prefix[i]%26;
