@@ -17,26 +17,30 @@ public:
         // for (int i = l - 2; i >= 0  ; i--){
         //     postfixCost[i] = ((boxes[i+1] == '1') ? 1 : 0) + postfixCost[i+1];
         // }
-
+        int prefixO = 0;
+        int prefixC = 0;
         for (int i = 0 ; i < l ; i++){
             if (i == 0){
-                if (boxes[i] == '1') prefixOnes[i] = 1;
+                if (boxes[i] == '1') prefixO = 1;
                 continue;
             }
-            prefixOnes[i] = prefixOnes[i-1] + (boxes[i] == '1' ? 1 : 0);
-            prefixCost[i] = prefixCost[i-1] + prefixOnes[i-1];
-            ans[i] += prefixCost[i];
+        
+            prefixC = prefixC + prefixO;
+            prefixO = prefixO + (boxes[i] == '1' ? 1 : 0);
+            ans[i] += prefixC;
         }
 
-
+        int postfixO = 0;
+        int postfixC = 0;
         for (int i = l - 1 ; i >= 0 ; i--){
             if (i == l-1 ){
-                if (boxes[l-1] == '1') postfixOnes[i] = 1;
+                if (boxes[l-1] == '1') postfixO = 1;
                 continue;
             }
-            postfixOnes[i] = postfixOnes[i+1] + (boxes[i] == '1' ? 1 : 0);
-            postfixCost[i] = postfixCost[i+1] + postfixOnes[i+1];
-            ans[i] += postfixCost[i];
+
+            postfixC = postfixC + postfixO;
+            postfixO = postfixO + (boxes[i] == '1' ? 1 : 0);
+            ans[i] += postfixC;
         }
 
 
