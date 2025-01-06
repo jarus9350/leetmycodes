@@ -25,7 +25,9 @@ public:
             }
             prefixOnes[i] = prefixOnes[i-1] + (boxes[i] == '1' ? 1 : 0);
             prefixCost[i] = prefixCost[i-1] + prefixOnes[i-1];
+            ans[i] += prefixCost[i];
         }
+
 
         for (int i = l - 1 ; i >= 0 ; i--){
             if (i == l-1 ){
@@ -34,6 +36,7 @@ public:
             }
             postfixOnes[i] = postfixOnes[i+1] + (boxes[i] == '1' ? 1 : 0);
             postfixCost[i] = postfixCost[i+1] + postfixOnes[i+1];
+            ans[i] += postfixCost[i];
         }
 
 
@@ -48,9 +51,9 @@ public:
         // }
         // cout<<endl;
 
-        for (int i = 0 ; i < l ; i++){
-            ans[i] = prefixCost[i] + postfixCost[i];
-        }
+        // for (int i = 0 ; i < l ; i++){
+        //     ans[i] = prefixCost[i] + postfixCost[i];
+        // }
 
         // for (int i = 0 ; i < l ; i++){
         //     int count = 0;
