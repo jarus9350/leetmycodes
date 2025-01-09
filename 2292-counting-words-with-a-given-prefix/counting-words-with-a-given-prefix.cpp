@@ -30,7 +30,7 @@ public:
         }
 
         int noTimes = search(pref,root);
-        cout<<noTimes<<endl;
+        // cout<<noTimes<<endl;
 
         return noTimes;
         
