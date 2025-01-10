@@ -15,10 +15,10 @@ public:
             }
         }
 
-        for (auto c: freq){
-            cout<<c<<" ";
-        }
-        cout<<endl;
+        // for (auto c: freq){
+        //     cout<<c<<" ";
+        // }
+        // cout<<endl;
 
         vector<string> ans;
 
