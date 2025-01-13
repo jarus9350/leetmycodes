@@ -26,8 +26,8 @@ public:
                 count += f;
             }
 
-            char ch = 'a' + i;
-            cout<<ch<<" "<<f<<" "<<count<<endl;
+            // char ch = 'a' + i;
+            // cout<<ch<<" "<<f<<" "<<count<<endl;
         }
 
         return count;
