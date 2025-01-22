@@ -11,14 +11,13 @@ public:
         priority_queue<vector<int>,vector<vector<int>>, greater<vector<int>>> pq;
 
         vector<vector<int>> heights(r,vector<int>(c,0));
-        vector<vector<int>> vis(r,vector<int>(c,0));
         vector<vector<int>> dir = {{0,1},{1,0},{0,-1}, {-1,0}};
 
         for (int i = 0 ; i < r ; i++){
             for (int j = 0 ; j < c ; j++){
                 if (isWater[i][j] == 1) {
                     pq.push({0,i,j});
-                    vis[i][j] = 1;
+                    isWater[i][j] = -1;
                 }
             }
         }
@@ -37,9 +36,9 @@ public:
                 int x = i + d[0];
                 int y = j + d[1];
 
-                if (isValid(x,y,r,c) && !vis[x][y]){
+                if (isValid(x,y,r,c) && !isWater[x][y]){
                     pq.push({height+1,x,y});
-                    vis[x][y] = 1;
+                    isWater[x][y] = 1;
                 }
             }
 
