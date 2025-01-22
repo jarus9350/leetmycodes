@@ -8,7 +8,8 @@ public:
         int r = isWater.size();
         int c = isWater[0].size();
 
-        priority_queue<vector<int>,vector<vector<int>>, greater<vector<int>>> pq;
+        // priority_queue<vector<int>,vector<vector<int>>, greater<vector<int>>> pq;
+        queue<vector<int>> pq;
 
         vector<vector<int>> heights(r,vector<int>(c,0));
         vector<vector<int>> dir = {{0,1},{1,0},{0,-1}, {-1,0}};
@@ -23,7 +24,7 @@ public:
         }
 
         while (!pq.empty()){
-            auto top = pq.top();
+            auto top = pq.front();
             pq.pop();
 
             int height = top[0];
