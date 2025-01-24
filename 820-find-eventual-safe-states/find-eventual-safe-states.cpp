@@ -15,9 +15,10 @@ public:
             int next = graph[index][i];
             if (status.find(next) == status.end()) {
                 allPaths = allPaths && dfs( next,graph);
+                continue;
             }
 
-            if (status[next] == 0 ){ // already in map
+            if (status[next] == 0 ){
                 return false;
             } 
         }
