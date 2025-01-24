@@ -33,7 +33,7 @@ public:
             dfs(i,graph);
         }
 
-        for (auto [key,val] : status){
+        for (auto &[key,val] : status){
             if (val == 1){
                 ans.push_back(key);
             }
