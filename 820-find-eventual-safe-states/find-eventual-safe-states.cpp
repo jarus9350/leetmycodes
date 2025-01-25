@@ -3,6 +3,10 @@ public:
     vector<int> ans;
     map<int,int> status;
     bool dfs(int index, vector<vector<int>>& graph){
+        if (status.find(index) != status.end()) {
+            return status[index];
+        }
+        
         if (graph[index].size() == 0){
             status[index] = 1;
             return true;
