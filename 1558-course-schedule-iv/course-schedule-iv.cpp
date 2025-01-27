@@ -13,8 +13,6 @@ public:
 
             if (f == c2) return true;
 
-            // if (vis[f]) continue;
-
             for (auto n: graph[f]){
                 if (!vis[n]) {
                     q.push(n);
@@ -39,13 +37,13 @@ public:
             graph[from].push_back(to);
         }
 
-        for (int i = 0 ; i < numCourses ; i++){
-            cout<<i<<" : ";
-            for (auto n: graph[i]){
-                cout<<n<<" ";
-            }
-            cout<<endl;
-        }
+        // for (int i = 0 ; i < numCourses ; i++){
+        //     cout<<i<<" : ";
+        //     for (auto n: graph[i]){
+        //         cout<<n<<" ";
+        //     }
+        //     cout<<endl;
+        // }
 
         for (auto q: queries){
             int c1 = q[0];
