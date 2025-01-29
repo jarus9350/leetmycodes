@@ -17,7 +17,7 @@ public:
             return false;
         }
 
-        if (rank[p1] > rank[p2]){
+        if (rank[p1] >= rank[p2]){
             parent[p2] = p1;
             rank[p1] += rank[p2];
         } else {
