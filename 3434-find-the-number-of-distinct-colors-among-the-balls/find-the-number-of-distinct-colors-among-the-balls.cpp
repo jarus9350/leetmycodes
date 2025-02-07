@@ -1,11 +1,9 @@
 class Solution {
 public:
     vector<int> queryResults(int limit, vector<vector<int>>& queries) {
-        set<int> s;
         vector<int> ans;
         
-        map<int,int> colorFreq;
-        map<int,int> posColor;
+        unordered_map<int,int> colorFreq, posColor;
 
         for (auto q: queries){
             int pos = q[0];
