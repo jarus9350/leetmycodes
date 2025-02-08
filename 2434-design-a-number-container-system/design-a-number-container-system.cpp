@@ -16,13 +16,11 @@ public:
             indexNum[index] = number;
 
             numSet[oldNum].erase(index);
-            // if (numSet[oldNum].size() == 0) numSet.erase(oldNum);
             numSet[number].insert(index);
         }
     }
     
     int find(int number) {
-       // auto s = numSet[number];
         if (numSet[number].size() == 0) return -1;
         return *numSet[number].begin();
     }
