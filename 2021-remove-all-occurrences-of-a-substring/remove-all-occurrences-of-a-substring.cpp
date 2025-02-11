@@ -1,8 +1,6 @@
 class Solution {
 public:
     string removeOccurrences(string s, string part) {
-        // reverse(part.begin(),part.end());
-        cout<<part<<endl;
         string st = "";
         int partLen = part.length();
 
