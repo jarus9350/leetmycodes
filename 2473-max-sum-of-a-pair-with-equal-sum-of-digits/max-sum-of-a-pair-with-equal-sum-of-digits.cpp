@@ -19,7 +19,6 @@ public:
         for (int i = 0 ; i < nums.size(); i++){
             int number = nums[i];
             int n = digitSum(number);
-            cout<<number<<" "<<n<<endl;
             mp[n].insert(number);
         }
 
@@ -38,18 +37,5 @@ public:
         
     }
 };
-
-//   18 9
-//   43 7
-//   36 9
-//   13 4
-//      7
-//=========
-
-//   10 1
-//   12 3
-//   19 10
-//   14 5
-//=========
 
 
