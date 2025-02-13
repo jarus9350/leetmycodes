@@ -12,7 +12,7 @@ public:
             long second = pq.top();
             pq.pop();
 
-            if (first >= k && second >= k) continue;
+            if (first >= k && second >= k) break;
 
             long n = min(first,second)*2 + max(first,second);
 
