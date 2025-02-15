@@ -24,7 +24,6 @@ public:
             }
         }
 
-        cout<<isPunishmentNumber(100, "10000")<<endl;
         return ans;
     }
 };
