@@ -23,7 +23,7 @@ public:
                 if (inter.size() == n) {
                     current++;
 
-                    cout<<inter<<" "<<current<<endl;
+                    // cout<<inter<<" "<<current<<endl;
                 }
 
                 
