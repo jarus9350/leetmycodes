@@ -1,32 +1,60 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
 class Solution {
 public:
-    string s;
-    int idx = 0, level = 0;
-
     TreeNode* recoverFromPreorder(string traversal) {
-        s = traversal;
-        TreeNode* node = new TreeNode(-1);
-        helper(node, 0);
-        return node->left;
-    }
+        int dashes = 0;
+        vector<TreeNode*> st;
 
-    void helper(TreeNode* parent, int lvl) {
-        while (idx < s.length() && lvl == level) {
-            int num = 0;
-            while (idx < s.length() && isdigit(s[idx])) {
-                num = num * 10 + (s[idx++] - '0');
+        int i = 0;
+        while (i < traversal.length()) {
+            if (traversal[i] == '-'){
+                dashes++;
+                i++;
+            } else {
+                int j = i;
+                string a = "";
+                while (j < traversal.length() && traversal[j] != '-'){
+                    a = a + traversal[j];
+                    j++;
+                }
+
+                int num = stoi(a);
+                // cout<<a<<" "<<num<<endl;
+
+                TreeNode* n = new TreeNode(num);
+
+                while (st.size() > dashes) { 
+                    st.pop_back();
+                }
+
+                if (st.size() && st.back()->left == nullptr){
+                    st.back()->left = n;
+                } else if (st.size() ){
+                    st.back()->right = n;
+                }
+
+                st.push_back(n);
+
+                
+                dashes = 0;
+
+
+                i = j;
             }
-            TreeNode* node = new TreeNode(num);
-            if (!parent->left)
-                parent->left = node;
-            else
-                parent->right = node;
-            level = 0;
-            while (idx < s.length() && s[idx] == '-') {
-                level++;
-                idx++;
-            }
-            helper(node, lvl + 1);
         }
+
+        return st[0];
+        
+        
     }
 };
