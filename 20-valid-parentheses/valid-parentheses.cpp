@@ -7,9 +7,9 @@ public:
                 st.push(c);
              } else {
                 if (st.empty()) return false;
-                if (st.size() && st.top() == '(' && c != ')') return false; 
-                if (st.size() && st.top() == '{' && c != '}') return false;
-                if (st.size() && st.top() == '[' && c != ']') return false;
+                if (st.top() == '(' && c != ')') return false; 
+                if (st.top() == '{' && c != '}') return false;
+                if (st.top() == '[' && c != ']') return false;
                 st.pop();
              }
         }
