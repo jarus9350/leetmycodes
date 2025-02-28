@@ -10,36 +10,27 @@
  * };
  */
 class Solution {
-public: 
+public:
     vector<int> rightSideView(TreeNode* root) {
         if (root == nullptr) return {};
-        queue<TreeNode*> q;
         vector<int> ans;
+
+        queue<TreeNode*> q;
         q.push(root);
 
-        int level = 1;
         while (q.size()){
-            int levelSize = q.size();
-            while (levelSize--){
+            int levelLength = q.size();
+            ans.push_back(q.back()->val);
+            while (levelLength--){
                 auto front = q.front();
                 q.pop();
 
-                if (ans.size() < level){
-                    ans.push_back(front->val);
-                } else {
-                    ans[level-1] = front->val;
-                }
-                
-
                 if (front->left) q.push(front->left);
                 if (front->right) q.push(front->right);
-    
             }
-
-            level++;
         }
-        
 
         return ans;
+        
     }
 };
