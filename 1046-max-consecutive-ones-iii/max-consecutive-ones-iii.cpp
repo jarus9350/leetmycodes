@@ -11,7 +11,7 @@ public:
 
         int countZeroes = 0;
 
-        if (k >= n) return n;
+        // if (k >= n) return n;
 
         while (j < n){
             if (nums[j] == 0) {
