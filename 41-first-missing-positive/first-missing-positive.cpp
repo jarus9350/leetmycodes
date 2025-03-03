@@ -31,10 +31,10 @@ public:
             }            
         }
 
-        for (auto n: nums){
-            cout<<n<<" ";
-        }
-        cout<<endl;
+        // for (auto n: nums){
+        //     cout<<n<<" ";
+        // }
+        // cout<<endl;
 
         for (int i = 1 ; i <= n ; i++) {
             if (nums[i-1] < 0 || nums[i-1] == defaultValue)  {
@@ -42,6 +42,8 @@ public:
             } else {
                 return i;
             }
+
+            // if (nums[i-1] > 0 && nums[i-1] != defaultValue) return i;
         }
 
 
