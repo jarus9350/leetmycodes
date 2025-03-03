@@ -5,7 +5,7 @@ public:
         if (index == n) return;
         if (target < 0) return;
 
-        if (target == 0 && index < n){
+        if (target == 0){
             ans.push_back(inter);
             return;
         }
