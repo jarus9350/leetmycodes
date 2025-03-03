@@ -10,7 +10,7 @@ public:
             }
         }
 
-        int defaultValue = -(n + 1);
+        int defaultValue = -(n + 1); //it will not be in array
 
         for (int i = 0 ; i < n ; i++) {
             int num = nums[i];
@@ -37,13 +37,13 @@ public:
         // cout<<endl;
 
         for (int i = 1 ; i <= n ; i++) {
-            if (nums[i-1] < 0 || nums[i-1] == defaultValue)  {
-                continue;
-            } else {
-                return i;
-            }
+            // if (nums[i-1] < 0 || nums[i-1] == defaultValue)  {
+            //     continue;
+            // } else {
+            //     return i;
+            // }
 
-            // if (nums[i-1] > 0 && nums[i-1] != defaultValue) return i;
+            if (nums[i-1] >= 0 && nums[i-1] != defaultValue) return i;
         }
 
 
