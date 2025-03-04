@@ -1,24 +1,25 @@
 class Solution {
 public:
-    bool ans = false;
-    void backtrack(int n,int i) {
-         if (n == 0) {
-            ans = true;
-            return;
+    bool checkPowersOfThree(int n) {
+        int power = 0;
+
+        while (pow(3,power) <= n ){
+            power++;
         }
 
-        if (i > 15) return;
-        if (n < 0) return;
+        while (n > 0){
+            if ( n >= pow(3,power)) {
+                n -= pow(3,power);
+            } 
 
-        //include power of i
-        backtrack(n - (int)pow(3,i),i+1);
+            if ( n >= pow(3,power)) return false;
 
-        //exclude power of i
-        backtrack(n, i+1);
-    }
+            power--;
+        }
 
-    bool checkPowersOfThree(int n) {
-        backtrack(n,0);
-        return ans;
+
+        return true;
+
+        
     }
 };
