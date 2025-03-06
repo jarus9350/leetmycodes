@@ -8,8 +8,9 @@ public:
 
     void dfs(int i,int j,int& m,int& n,vector<vector<char>>& grid){
         if (i < 0 || j < 0 || i >= m || j >= n) return;
+        if (grid[i][j] == '2') return;
         if (grid[i][j] == '0') return;
-         if (grid[i][j] == '2') return;
+        
 
         grid[i][j] = '2';
 
