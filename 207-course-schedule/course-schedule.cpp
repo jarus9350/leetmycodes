@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool dfs(int i, vector<int>& vis, unordered_map<int,vector<int>>& adjList){
-        if (vis[i]) return false;
         if (adjList[i].size() == 0) return true;
+        if (vis[i]) return false;
 
         vis[i] = 1;
 
@@ -19,7 +19,7 @@ public:
 
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         unordered_map<int,vector<int>> adjList;
-        for (int i = 0 ; i < numCourses ; i++) adjList[i] = vector<int>();
+        // for (int i = 0 ; i < numCourses ; i++) adjList[i] = vector<int>();
         
         vector<int> vis(numCourses,0);
         
