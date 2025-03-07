@@ -23,7 +23,7 @@ public:
                     nums[index] = defaultValue;
                 } else {
                     if (numAtIndex < 0) {
-                        continue;
+                        // continue;
                     } else {
                         nums[index] = -nums[index];
                     }
