@@ -13,7 +13,7 @@ public:
             if (nums[m] < 0) {
                 l = m + 1;
             } else if (nums[m] >= 0) {
-                lowerB = m;
+                lowerB = m;  //first positive or first zero
                 r = m - 1;
             }  
         }
@@ -26,8 +26,8 @@ public:
             if (nums[m] <= 0) {
                 l = m + 1;
             } else if (nums[m] > 0) {
-                r = m - 1;
-                upperB = m;
+                r = m - 1; 
+                upperB = m;  // first postive
             }  
         }
 
