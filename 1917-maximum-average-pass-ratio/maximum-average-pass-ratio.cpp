@@ -1,62 +1,40 @@
 class Solution {
 public:
-    double diff(pair<int,int> a){
-        int num = a.first;
-        int denum = a.second;
-        return (double)(num + 1)/(denum + 1) - (double)(num)/(denum);
-    }
+    // priority_queue<pair<double,int>, vector<pair<double,int>>, greater<pair<int,int>>> pq;
 
-    double newVal(pair<int,int> a){
-        int num = a.first;
-        int denum = a.second;
-        return (double)(num + 1)/(denum + 1);
-    }
-
+    priority_queue<pair<double,int>> pq;
     double maxAverageRatio(vector<vector<int>>& classes, int extraStudents) {
-        priority_queue<pair<double,pair<int,int>>> pq;
+        for (int i = 0; i < classes.size() ; i++){
+            double ratioChange = (double)(classes[i][0]+1)/(classes[i][1]+1) - (double)classes[i][0]/classes[i][1];
+            pq.push({ratioChange,i});
+        }
 
-        for (int i = 0 ; i < classes.size() ; i++){
-            auto cl = classes[i];
-            int num = cl[0];
-            int denum = cl[1];
-            // double ratio = (double)(num)/denum;
-            // pq.push({ratio,{num,denum}});
-            pq.push({diff({num,denum}),{num,denum}});
+        while (extraStudents--){
+            auto top = pq.top();
+            pq.pop();
+
+            double maxChange = top.first;
+            int index = top.second;
+
+            classes[index][0] += 1;
+            classes[index][1] += 1;
+
+            double newChange = (double)(classes[index][0]+1)/(classes[index][1]+1) - (double)classes[index][0]/classes[index][1];
+
+            pq.push({newChange, index});
         }
 
         double ans = 0;
-
-        // while (pq.size()){
-        //     cout<<pq.top().first<<endl;
-        //     pq.pop();
-        // }
-
-
-        while (extraStudents--){
-            auto [dif, indexes] = pq.top();
-            pq.pop();
-
-            int num = indexes.first;
-            int denum = indexes.second;
-
-            pq.push({ diff({num + 1, denum + 1}), {num + 1, denum + 1}});
-            
-            // pq.push({diff({num,denum}),{num,denum}});
-        }
-
         while (pq.size()){
-            // cout<<pq.top().first<<endl;
-            auto [diff, indexes] = pq.top();
-            ans += (double)(indexes.first)/(indexes.second);
+            auto top = pq.top();
             pq.pop();
-        }
 
-        // for (auto cl: classes){
-        //     ans += (double)(cl[0])/cl[1];
-        // }
+            int index = top.second;
+
+            ans += (double)classes[index][0]/classes[index][1]; 
+        }
 
         return ans/classes.size();
-
-        
+   
     }
 };
