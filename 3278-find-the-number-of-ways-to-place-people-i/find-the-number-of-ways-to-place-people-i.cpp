@@ -15,9 +15,9 @@ public:
 
     int numberOfPairs(vector<vector<int>>& points) {
         sort(points.begin(), points.end(), comp);
-        for (auto a: points){
-            cout<< a[0] <<" "<<a[1]<<endl;
-        }
+        // for (auto a: points){
+        //     cout<< a[0] <<" "<<a[1]<<endl;
+        // }
         int ans = 0;
         for(int i = 0 ; i < points.size() ; i++){
             for (int j = i + 1 ; j < points.size() ; j++ ){
