@@ -15,17 +15,17 @@ public:
         sort(points.begin(), points.end(), comp);
         int ans = 0;
         for(int i = 0 ; i < points.size() ; i++){
-            //auto topLeft = points[i];
+            auto& topLeft = points[i];
             int y = INT_MIN;
             for (int j = i + 1 ; j < points.size() ; j++ ){
-                //auto bottomRight = points[j];
+                auto& bottomRight = points[j];
 
-                if (isTopLeft(points[i], points[j])){
-                    if (points[i][1] >= y && points[j][1] <= y) {
-                        continue;
+                if (isTopLeft(topLeft, bottomRight)){
+                    if (topLeft[1] >= y && bottomRight[1] <= y) {
+                        
                     } else {
                         ans++;
-                        y = points[j][1];
+                        y = bottomRight[1];
                     }
                     
                 } 
