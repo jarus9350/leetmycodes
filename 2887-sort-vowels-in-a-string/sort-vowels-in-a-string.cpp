@@ -8,7 +8,7 @@ public:
     string sortVowels(string s) {
         vector<char> vowels;
         for (auto c: s){
-            if (tolower(c) == 'a' || tolower(c) == 'e' || tolower(c) == 'i' || tolower(c) == 'o' || tolower(c) == 'u') vowels.push_back(c);
+            if (isVowel(c)) vowels.push_back(c);
         }
 
         sort(vowels.begin(),vowels.end());
