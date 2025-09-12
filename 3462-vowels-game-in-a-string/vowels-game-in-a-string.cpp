@@ -6,9 +6,9 @@ public:
     bool doesAliceWin(string s) {
         int count = 0;
         for (auto& c: s) {
-            if (isVowel(c)) count++;
+            if (isVowel(c)) return true;
         }
 
-        return count;
+        return false;
     }
 };
