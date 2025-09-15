@@ -9,25 +9,26 @@ public:
 
         int count = 0;
         string word = "";
+        bool b = false;
         for (int i = 0 ; i < text.length() ; i++){
             if (text[i] == ' '){
-                if (word != "") count++;
-            } else {
-                if (broken[text[i]-'a']) {
-                    while ( i < text.length() && text[i] != ' ') {
-                        i++;
-                    }
-                    word = "";
-                } else {
-                    word.push_back(text[i]);
+                if (word != "" && !b) {
+                    count++;
                 }
-
+                word = "";
+                b = false;
+            } else {
+                word.push_back(text[i]);
+                if (broken[text[i]-'a']) {
+                    b = true;
+                }
             }
-
-
         }
 
-        if (word != "") count++;
+        if (word != "" && !b) {
+                    count++;
+                }
+
         return count;
         
     }
