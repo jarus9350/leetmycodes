@@ -7,8 +7,7 @@ public:
         }
     };
 
-    unordered_map<int,unordered_map<int,int>> userTaskPriority;
-    unordered_map<int,int> taskUser;
+    unordered_map<int,pair<int,int>> taskUserPriority;
 
     set<pair<int,int>, Compare> executionList; //priority, taskId
     TaskManager(vector<vector<int>>& tasks) {
@@ -17,35 +16,30 @@ public:
             auto& task = t[1];
             auto& priority = t[2];
 
-            taskUser[task] = user;
-            userTaskPriority[user][task] = priority;
+            taskUserPriority[task] = {user,priority};
             executionList.insert({priority,task});
         }
         
     }
     
     void add(int userId, int taskId, int priority) {
-        taskUser[taskId] = userId;
-        userTaskPriority[userId][taskId] = priority;
+        taskUserPriority[taskId]= {userId,priority};
         executionList.insert({priority,taskId});
     }
     
     void edit(int taskId, int newPriority) {
-        auto user = taskUser[taskId];
-        auto oldPriority = userTaskPriority[user][taskId];
-        userTaskPriority[user][taskId] = newPriority;
+        auto [user, priority] = taskUserPriority[taskId];
 
-        executionList.erase({oldPriority,taskId});
+        taskUserPriority.erase(taskId);
+        taskUserPriority[taskId] = {user,newPriority};
+        executionList.erase({priority ,taskId});
         executionList.insert({newPriority,taskId});
     }
     
     void rmv(int taskId) {
-        auto userId = taskUser[taskId];
-        auto oldPriority = userTaskPriority[userId][taskId];
-        userTaskPriority[userId].erase(taskId);
-
-        taskUser.erase(taskId);
-        executionList.erase({oldPriority,taskId});
+        auto [user, priority] = taskUserPriority[taskId];
+        taskUserPriority.erase(taskId);
+        executionList.erase({priority,taskId});
     }
     
     int execTop() {
@@ -53,10 +47,10 @@ public:
         if (it == executionList.end()) return -1;
 
         auto taskId = it->second;
-        auto userId = taskUser[taskId]; 
+        auto [user, priority] = taskUserPriority[taskId];
         rmv(taskId);
 
-        return userId;
+        return user;
     }
 };
 
