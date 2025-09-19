@@ -17,14 +17,6 @@ public:
     }
     
     int getValue(string formula) {
-        // cout<<"/////"<<endl;
-        // for (auto a : sheet) {
-        //     for (auto b: a){
-        //         cout<<b<<" ";
-        //     }
-        //     cout<<endl;
-        // }
-
         int result = 0;
         int num = 0;
         int col = -1; int row = -1;
@@ -37,9 +29,7 @@ public:
                 num = 0;
                 col = formula[i] - 'A';
             } else {
-                auto c = formula[i];
                 num = num*10 + (formula[i] - '0');
-                int n = num;
             }
         }
 
