@@ -22,11 +22,13 @@ public:
     vector<int> forwardPacket() {
         if (!q.size()) return {};
         auto front = q.front();
-        q.pop();
+        
 
         int src = front[0];
         int dest = front[1];
         int t = front[2];
+
+        q.pop();
 
         destTime[dest].pop_front();
         timeSD[t].erase({src,dest});
