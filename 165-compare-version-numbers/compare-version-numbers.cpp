@@ -53,15 +53,15 @@ public:
 
         if (s!= "") v2.push_back(s);
 
-        for (auto c: v1) {
-            cout<<c<<" ";
-        }
-        cout<<endl;
+        // for (auto c: v1) {
+        //     cout<<c<<" ";
+        // }
+        // cout<<endl;
 
-        for (auto c: v2) {
-            cout<<c<<" ";
-        }
-        cout<<endl;
+        // for (auto c: v2) {
+        //     cout<<c<<" ";
+        // }
+        // cout<<endl;
 
         int i = 0;
         for (; i < v1.size() && i < v2.size(); i++){
