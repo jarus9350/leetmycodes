@@ -4,9 +4,6 @@ public:
         vector<string> v1;
         vector<string> v2;
 
-
-        bool zeroes = false;
-        bool dot = false;
         string s = "";
         for (int i = 0 ; i < version1.size() ;){
             if (version1[i] == '.') {
