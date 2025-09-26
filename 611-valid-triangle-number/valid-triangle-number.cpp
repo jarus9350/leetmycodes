@@ -23,11 +23,11 @@ public:
                         h = mid - 1;                       
                     } else if (nums[mid] < a + b) {
                         l = mid + 1;
-                        index = l;
+                        index = mid;
                     }
                 }
 
-                if (index != -1) count += index - j - 1;
+                if (index != -1) count += index - j;
 
             }
         }
