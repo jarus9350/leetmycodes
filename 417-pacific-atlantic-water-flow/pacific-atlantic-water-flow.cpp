@@ -10,9 +10,6 @@ public:
         dfs(heights,reach,i-1,j,r,c, heights[i][j]);
         dfs(heights,reach,i,j+1,r,c, heights[i][j]);
         dfs(heights,reach,i,j-1,r,c, heights[i][j]);
-
-        
-
         return;
 
     }
@@ -35,19 +32,11 @@ public:
             }
         }
 
-        // for (int i = 0 ; i < r ; i++){
-        //     for (int j = 0; j < c ; j++){
-        //         if (i == 0 || j == 0 ){
-        //             dfs(heights,reachPacific,i,j,r,c,0);
-        //         }
-        //     }
-        // }
-
         vector<vector<int>> ans;
         for (int i = 0 ; i < r ; i++){
             for (int j = 0 ; j < c ; j++){
                 if (reachPacific[i][j] && reachAtlantic[i][j]) {
-                    cout<<i<<" "<<j<<endl;
+                    // cout<<i<<" "<<j<<endl;
                     ans.push_back({i,j});
                 }
             }
