@@ -21,7 +21,6 @@ public:
         int l = 0;
         int h = n*n - 1;
         int ans = -1;
-        vector<vector<int>> vis(n,vector<int>(n,0));
         while (l <= h) {
             int m = l + (h - l)/2;
              vector<vector<int>> vis(n,vector<int>(n,0));
