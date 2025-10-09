@@ -28,10 +28,10 @@ public:
         }
         
 
-        for (auto s: prev) {
-            cout<<s<<" ";
-        }
-        cout<<endl;
+        // for (auto s: prev) {
+        //     cout<<s<<" ";
+        // }
+        // cout<<endl;
 
         return prev[n-1];
         
