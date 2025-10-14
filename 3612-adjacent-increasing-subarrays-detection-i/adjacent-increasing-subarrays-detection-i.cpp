@@ -15,15 +15,15 @@ public:
             if ( i + 1 < n && nums[i] < nums[i+1]) fromI[i] += fromI[i+1];
         }
 
-        for (auto c: tillI){
-            cout<<c<<" ";
-        }
-        cout<<endl;
+        // for (auto c: tillI){
+        //     cout<<c<<" ";
+        // }
+        // cout<<endl;
 
-        for (auto c: fromI){
-            cout<<c<<" ";
-        }
-        cout<<endl;
+        // for (auto c: fromI){
+        //     cout<<c<<" ";
+        // }
+        // cout<<endl;
 
         for (int i = 0 ; i < n ; i++){
             if (  i+ 1 < n && tillI[i] >= k && fromI[i+1] >=k ) return true;
